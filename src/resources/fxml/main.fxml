@@ -1,0 +1,55 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+    <top>
+        <MenuBar>
+            <Menu text="F_ile">
+                <MenuItem text="N_ew" />
+                <MenuItem text="S_ave" />
+                <MenuItem text="L_oad" />
+                <MenuItem text="Ex_it" />
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <!--<ScrollPane>-->
+            <VBox fx:id="commodityVbox">
+                <padding>
+                    <Insets topRightBottomLeft="10"/>
+                </padding>
+            </VBox>
+        <!--</ScrollPane>-->
+    </center>
+    <bottom>
+        <GridPane>
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <FlowPane alignment="CENTER">
+                <Button text="Add Commodity" onMouseClicked="#addCom" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            </FlowPane>
+            <VBox alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Button text="Save All" onMouseClicked="#saveAll"/>
+                <padding>
+                    <Insets topRightBottomLeft="5"/>
+                </padding>
+            </VBox>
+            <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <Label text="+/-" fx:id="fullYield">
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                </Label>
+                <Label text="\%" fx:id="fullPercentYield"/>
+            </VBox>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+            </columnConstraints>
+        </GridPane>
+    </bottom>
+</BorderPane>
